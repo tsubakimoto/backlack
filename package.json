@@ -1,0 +1,15 @@
+{
+  "name": "backlack",
+  "version": "1.0.0",
+  "description": "Backlog to Slack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "linq": "^3.0.5",
+    "request": "^2.79.0"
+  }
+}
