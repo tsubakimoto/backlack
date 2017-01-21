@@ -29,4 +29,4 @@ exports.channels = {
 4. Deploy repository to Microsoft Azure Functions.
 
 # Slack notification sample
-[Sample image in Slack](https://raw.githubusercontent.com/wiki/tsubakimoto/backlack/images/slack-notification-sample.png)
+![Sample image in Slack](https://raw.githubusercontent.com/wiki/tsubakimoto/backlack/images/slack-notification-sample.png)
