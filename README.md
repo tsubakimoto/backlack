@@ -1,11 +1,11 @@
-# backlack
+backlack
 ===
 
 (ja) [Backlog](http://www.backlog.jp/)での操作をSlackに通知する拡張機能です。
 
 (en) This repository is Slack extension to notify operation in [Backlog](http://www.backlog.jp/).
 
-## Usage
+# Usage
 * Clone repository to your computer.
 
 ```
