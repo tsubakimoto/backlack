@@ -6,13 +6,13 @@ backlack
 (en) This repository is Slack extension to notify operation in [Backlog](http://www.backlog.jp/).
 
 ## Usage
-* Clone repository to your computer.
+1. Clone repository to your computer.
 
 ```
 git clone https://github.com/tsubakimoto/backlack.git
 ```
 
-* Edit `settings.js`. Replace `{your-space}` to your Backlog account name.
+2. Edit `settings.js`. Replace `{your-space}` to your Backlog account name.
 
 ```js
 exports.ticketUrl = 'https://{your-space}.backlog.jp/view/{key}';
@@ -20,7 +20,7 @@ exports.ticketCommentUrl = 'https://{your-space}.backlog.jp/view/{key}#comment-{
 exports.pullRequestUrl = 'https://{your-space}.backlog.jp/git/{key}/{repo}/pullRequests/{number}#comment-{id}';
 ```
 
-* Write your Slack **Incoming-Webhook** configuration.
+3. Write your Slack **Incoming-Webhook** configuration.
 
 ```js
 exports.channels = {
@@ -28,11 +28,11 @@ exports.channels = {
 };
 ```
 
-* Deploy repository to Microsoft Azure Functions.
+4. Deploy repository to Microsoft Azure Functions.
 
-* Copy function url on Azure Functions' portal.
+5. Copy function url on Azure Functions' portal.
 
-* Create webhook on Backlog and use copied url.
+6. Create webhook on Backlog and use copied url.
 
 Choose hook event, for example, "Issue Commented", "Issue Updated", "Comment on Pull Request".
 
