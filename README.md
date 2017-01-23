@@ -5,7 +5,7 @@ backlack
 
 (en) This repository is Slack extension to notify operation in [Backlog](http://www.backlog.jp/).
 
-# Usage
+## Usage
 * Clone repository to your computer.
 
 ```
@@ -36,5 +36,5 @@ exports.channels = {
 
 Choose hook event, for example, "Issue Commented", "Issue Updated", "Comment on Pull Request".
 
-# Slack notification sample
+## Slack notification sample
 ![Sample image in Slack](https://raw.githubusercontent.com/wiki/tsubakimoto/backlack/images/slack-notification-sample.png)
