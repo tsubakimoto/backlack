@@ -96,6 +96,12 @@ module.exports = function (context, data) {
             values.push(`担当者アサイン: @${a.new_value}`);
         }
 
+        // 期限日
+        const l = changes.firstOrDefault("$.field === 'limitDate'");
+        if (l !== null && 0 < l.new_value.length) {
+            values.push(`期限日: @${l.new_value}`);
+        }
+
         return values.length === 0 ? null : {
             title: 'Status',
             value: values.join('\n'),
