@@ -90,6 +90,14 @@ module.exports = function (context, data) {
             values.push(`状態変更 (${o} → ${n})`);
         }
 
+        // 完了理由
+        const r = changes.firstOrDefault("$.fields === 'resolution'");
+        if (r !== null && 0 < r.new_value.length) {
+            const o = settings.resolutions[r.old_value];
+            const n = settings.resolutions[r.new_value];
+            values.push(`完了理由: ${o} → ${n}`);
+        }
+
         // 担当者のアサイン
         const a = changes.firstOrDefault("$.field === 'assigner'");
         if (a !== null && 0 < a.new_value.length) {
