@@ -91,7 +91,7 @@ module.exports = function (context, data) {
         }
 
         // 完了理由
-        const r = changes.firstOrDefault("$.fields === 'resolution'");
+        const r = changes.firstOrDefault("$.field === 'resolution'");
         if (r !== null && 0 < r.new_value.length) {
             const o = settings.resolutions[r.old_value];
             const n = settings.resolutions[r.new_value];
