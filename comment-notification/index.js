@@ -92,7 +92,7 @@ module.exports = function (context, data) {
 
         // 完了理由
         const r = changes.firstOrDefault("$.field === 'resolution'");
-        if (r !== null && 0 < r.new_value.length) {
+        if (r !== null) {
             const o = settings.resolutions[r.old_value];
             const n = settings.resolutions[r.new_value];
             values.push(`完了理由: ${o} → ${n}`);
