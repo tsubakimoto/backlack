@@ -5,3 +5,4 @@ exports.pullRequestUrl = 'https://{your-space}.backlog.jp/git/{key}/{repo}/pullR
 exports.channels = {
 };
 exports.statuses = ['', '未対応', '処理中', '処理済み', '完了'];
+exports.resolutions = {'': '(未設定)',  '0': '対応済み', '1': '対応しない', '2': '無効', '3': '重複', '4': '再現しない'};

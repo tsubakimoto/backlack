@@ -74,12 +74,12 @@ module.exports = function (context, data) {
         const hasComment = 'comment' in content && 0 < content.comment.content.length;
         const hasCommit = changes.any("$.field === 'commit'");
         if (hasComment && !hasCommit) {
-            values.push('コメント追加');
+            values.push('操作: コメント追加');
         }
 
         // 本文の更新
         if (changes.any("$.field === 'description'")) {
-            values.push('本文更新');
+            values.push('操作: 本文更新');
         }
 
         // 状態の変更
@@ -87,13 +87,27 @@ module.exports = function (context, data) {
         if (s !== null) {
             const o = settings.statuses[Number(s.old_value)];
             const n = settings.statuses[Number(s.new_value)];
-            values.push(`状態変更 (${o} → ${n})`);
+            values.push(`状態変更: ${o} → ${n}`);
+        }
+
+        // 完了理由
+        const r = changes.firstOrDefault("$.field === 'resolution'");
+        if (r !== null) {
+            const o = settings.resolutions[r.old_value];
+            const n = settings.resolutions[r.new_value];
+            values.push(`完了理由: ${o} → ${n}`);
         }
 
         // 担当者のアサイン
         const a = changes.firstOrDefault("$.field === 'assigner'");
         if (a !== null && 0 < a.new_value.length) {
-            values.push(`担当者アサイン: @${a.new_value}`);
+            values.push(`担当者: @${a.new_value}`);
+        }
+
+        // 期限日
+        const l = changes.firstOrDefault("$.field === 'limitDate'");
+        if (l !== null && 0 < l.new_value.length) {
+            values.push(`期限日: ${l.new_value}`);
         }
 
         return values.length === 0 ? null : {
